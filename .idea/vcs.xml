@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="VcsDirectoryMappings">
+    <mapping directory="$PROJECT_DIR$" vcs="Git" />
+<<<<<<< HEAD
+=======
+    <mapping directory="$PROJECT_DIR$/Sistema-de-gerenciamento-e-gera-o-de-grade-escolar-JAVA-" vcs="Git" />
+>>>>>>> e8fc3a7d54a1ca12d76471f60cd4da60e3219703
+  </component>
+</project>
