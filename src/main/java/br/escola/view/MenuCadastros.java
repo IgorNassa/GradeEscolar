@@ -106,8 +106,6 @@ public class MenuCadastros {
             if(materia.equalsIgnoreCase("sair")){
 
 
-                //Tentando cadastrar as materias da turma, porém temos que transformar a entrada em um Objeto Disciplina antes de atr
-
                 turma.setMateriasDaGrade(materiasDaGrade);
                 BancoEstadual.turmas.add(turma);
 
@@ -147,7 +145,7 @@ public class MenuCadastros {
 
         // Limpa a lista caso o usuário já tenha cadastrado algo antes na mão
         BancoEstadual.horarios.clear();
-gito
+
         if (opcaoTurno == 1) {
             BancoEstadual.horarios.add(new Horario(1L, "07:30", "08:20"));
             BancoEstadual.horarios.add(new Horario(2L, "08:20", "09:10"));
