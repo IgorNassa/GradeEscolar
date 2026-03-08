@@ -1,21 +1,40 @@
 package br.escola.model;
 
 public class Horario {
+    private Long id;
+    private String horaInicio;
+    private String horaFim;
 
-    private int id;
-    private String inicio;
-    private String fim;
-
-    public Horario(int id, String inicio, String fim) {
+    public Horario(Long id, String horaInicio, String horaFim) {
         this.id = id;
-        this.inicio = inicio;
-        this.fim = fim;
-    }
-    public String getInicio() {
-        return inicio;
+        this.horaInicio = horaInicio;
+        this.horaFim = horaFim;
     }
 
-    public String getFim() {
-        return fim;
+    public Horario() {
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getHoraInicio() {
+        return horaInicio;
+    }
+
+    public void setHoraInicio(String horaInicio) {
+        this.horaInicio = horaInicio;
+    }
+
+    public String getHoraFim() {
+        return horaFim;
+    }
+
+    public void setHoraFim(String horaFim) {
+        this.horaFim = horaFim;
     }
 }

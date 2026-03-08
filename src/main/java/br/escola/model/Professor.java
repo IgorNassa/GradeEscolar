@@ -1,21 +1,40 @@
 package br.escola.model;
 
 public class Professor {
-
-    private int id;
+    private Long id;
     private String nome;
-    private Disciplina disciplina;
+    private Disciplina disciplinaLecionada;
 
-    public Professor(int id, String nome, Disciplina disciplina) {
+    public Professor(Long id, String nome, Disciplina disciplinaLecionada) {
         this.id = id;
         this.nome = nome;
-        this.disciplina = disciplina;
+        this.disciplinaLecionada = disciplinaLecionada;
     }
+
+    public Professor() {
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
     public String getNome() {
         return nome;
     }
 
-    public Disciplina getDisciplina() {
-        return disciplina;
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public Disciplina getDisciplinaLecionada() {
+        return disciplinaLecionada;
+    }
+
+    public void setDisciplinaLecionada(Disciplina disciplinaLecionada) {
+        this.disciplinaLecionada = disciplinaLecionada;
     }
 }

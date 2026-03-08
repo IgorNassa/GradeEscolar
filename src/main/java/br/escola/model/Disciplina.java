@@ -1,16 +1,32 @@
 package br.escola.model;
 
+import java.util.Objects;
+
 public class Disciplina {
+    private Long id;
+    private String nome;
 
-    private int id;
-    private String nomeDisciplina;
-
-    public Disciplina(int id, String nome) {
+    public Disciplina(Long id, String nome) {
         this.id = id;
-        this.nomeDisciplina = nome;
+        this.nome = nome;
+    }
+
+    public Disciplina() {
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getNome() {
-        return nomeDisciplina;
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
     }
 }
