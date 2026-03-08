@@ -1,6 +1,7 @@
 package br.escola.model;
 
 public class Aula {
+<<<<<<< HEAD
 
     private String turmaNome;
     private String profNome;
@@ -19,3 +20,6 @@ public class Aula {
     public String getMateria() { return materia; }
     public String getHorarioInicio() { return horarioInicio; }
 }
+=======
+}
+>>>>>>> 2f612ee53ab2917677874e99bb72333be69552eb

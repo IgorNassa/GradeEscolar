@@ -1,5 +1,6 @@
 package br.escola.model;
 
+<<<<<<< HEAD
 import java.util.ArrayList;
 import java.util.List;
 
@@ -39,4 +40,7 @@ public class Turma {
     public void setMateriasDaGrade(List<String> materiasDaGrade) {
         this.materiasDaGrade = materiasDaGrade;
     }
+=======
+public class Turma {
+>>>>>>> 2f612ee53ab2917677874e99bb72333be69552eb
 }

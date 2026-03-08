@@ -1,5 +1,6 @@
 package br.escola.database;
 
+<<<<<<< HEAD
 import br.escola.model.*;
 
 import java.util.ArrayList;
@@ -18,3 +19,7 @@ public class BancoEstadual {
     public static int idTurma = 1;
     public static int idHor = 1;
 }
+=======
+public class BancoEstadual {
+}
+>>>>>>> 2f612ee53ab2917677874e99bb72333be69552eb

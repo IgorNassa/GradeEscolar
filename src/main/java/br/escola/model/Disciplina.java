@@ -1,6 +1,7 @@
 package br.escola.model;
 
 public class Disciplina {
+<<<<<<< HEAD
     private Long id;
     private String nome;
 
@@ -27,4 +28,6 @@ public class Disciplina {
     public void setNome(String nome) {
         this.nome = nome;
     }
+=======
+>>>>>>> 2f612ee53ab2917677874e99bb72333be69552eb
 }

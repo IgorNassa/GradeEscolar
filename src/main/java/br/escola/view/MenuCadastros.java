@@ -43,6 +43,7 @@ public class MenuCadastros {
                 System.out.println("Disciplina não encontrada. Tente novamente.");
                 continue;
             }
+
             // adiciona matéria
             materiasDaGrade.add(materia);
             System.out.println("Matéria adicionada!");
@@ -90,5 +91,4 @@ public class MenuCadastros {
             System.out.println("❌ Opção de turno inválida.");
         }
     }
-
 }
