@@ -1,5 +1,6 @@
 package br.escola.view;
 
+<<<<<<< HEAD
 import br.escola.database.BancoEstadual;
 import br.escola.model.Turma;
 
@@ -52,3 +53,8 @@ public class MenuCadastros {
     }
 
 }
+=======
+public class MenuCadastros {
+
+}
+>>>>>>> 553822264c190788aa7554034aacbfa31288eb22
