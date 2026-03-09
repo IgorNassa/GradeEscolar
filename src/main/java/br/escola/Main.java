@@ -22,7 +22,7 @@ public class Main {
 
                 switch (opcao) {
                     case 1:
-                        System.out.println("Cadastro de professor ainda não implementado.");
+                        menuCadastros.cadastrarProfessor(sc);
                         break;
 
                     case 2:
@@ -30,11 +30,11 @@ public class Main {
                         break;
 
                     case 3:
-                        System.out.println("Cadastro de horário ainda não implementado.");
+                        menuCadastros.cadastrarHorario(sc);
                         break;
 
                     case 4:
-                        System.out.println("Cadastro de disciplina ainda não implementado.");
+                        menuCadastros.cadastrarDisciplina(sc);
                         break;
 
                     case 5:
