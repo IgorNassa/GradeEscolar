@@ -35,12 +35,31 @@ public class GeradorForcaBruta {
                     for (Aula aulaGerada : BancoEstadual.gradeGerada) {
                         if (aulaGerada.getProfNome().equals(professorEncontrado.getNome()) &&
                                 aulaGerada.getHorarioInicio().equals(horario.getHoraInicio())) {
-                            professorOcupado = true;
                             break;
                         }
                     }
 
-                    if (!professorOcupado) {
+                    // 6. VALIDAÇÃO DE CHOQUE DUPLO: Professor ocupado OU Turma ocupada neste horário?
+                    boolean temConflito = false;
+                    for (Aula aulaGerada : BancoEstadual.gradeGerada) {
+
+                        // Choque 1: O professor já tá dando aula em outra turma nessa hora?
+                        if (aulaGerada.getProfNome().equals(professorEncontrado.getNome()) &&
+                                aulaGerada.getHorarioInicio().equals(horario.getHoraInicio())) {
+                            temConflito = true;
+                            break;
+                        }
+
+                        // Choque 2: A turma já tem alguma outra matéria alocada nessa exata hora?
+                        if (aulaGerada.getTurmaNome().equals(turma.getNome()) &&
+                                aulaGerada.getHorarioInicio().equals(horario.getHoraInicio())) {
+                            temConflito = true;
+                            break;
+                        }
+                    }
+
+                    // 7. Se não tem conflito nem de professor, nem de turma, cria a Aula e salva!
+                    if (!temConflito) {
                         Aula novaAula = new Aula(
                                 turma.getNome(),
                                 professorEncontrado.getNome(),
@@ -50,6 +69,8 @@ public class GeradorForcaBruta {
 
                         BancoEstadual.gradeGerada.add(novaAula);
                         aulaAlocada = true;
+
+                        // Aula marcada com sucesso. Para o loop de horários e vai pra próxima matéria.
                         break;
                     }
                 }
