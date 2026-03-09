@@ -1,7 +1,6 @@
 package br.escola.model;
 
 public class Horario {
-<<<<<<< HEAD
     private Long id;
     private String horaInicio;
     private String horaFim;
@@ -38,6 +37,4 @@ public class Horario {
     public void setHoraFim(String horaFim) {
         this.horaFim = horaFim;
     }
-=======
->>>>>>> 2f612ee53ab2917677874e99bb72333be69552eb
 }

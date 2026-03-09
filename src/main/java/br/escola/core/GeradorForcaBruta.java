@@ -1,10 +1,7 @@
 package br.escola.core;
 
 import br.escola.database.BancoEstadual;
-import br.escola.model.Aula;
-import br.escola.model.Horario;
-import br.escola.model.Professor;
-import br.escola.model.Turma;
+import br.escola.model.*;
 
 public class GeradorForcaBruta {
 
@@ -15,11 +12,11 @@ public class GeradorForcaBruta {
         BancoEstadual.gradeGerada.clear();
 
         for (Turma turma : BancoEstadual.turmas) {
-            for (String materiaDesejada : turma.getMateriasDaGrade()) {
+            for (Disciplina materiaDesejada : turma.getMateriasDaGrade()) {
 
                 Professor professorEncontrado = null;
                 for (Professor prof : BancoEstadual.professores) {
-                    if (prof.getDisciplinaLecionada().equalsIgnoreCase(materiaDesejada)) {
+                    if (prof.getDisciplinaLecionada() ==  materiaDesejada) {
                         professorEncontrado = prof;
                         break;
                     }
@@ -38,21 +35,42 @@ public class GeradorForcaBruta {
                     for (Aula aulaGerada : BancoEstadual.gradeGerada) {
                         if (aulaGerada.getProfNome().equals(professorEncontrado.getNome()) &&
                                 aulaGerada.getHorarioInicio().equals(horario.getHoraInicio())) {
-                            professorOcupado = true;
                             break;
                         }
                     }
 
-                    if (!professorOcupado) {
+                    // 6. VALIDAÇÃO DE CHOQUE DUPLO: Professor ocupado OU Turma ocupada neste horário?
+                    boolean temConflito = false;
+                    for (Aula aulaGerada : BancoEstadual.gradeGerada) {
+
+                        // Choque 1: O professor já tá dando aula em outra turma nessa hora?
+                        if (aulaGerada.getProfNome().equals(professorEncontrado.getNome()) &&
+                                aulaGerada.getHorarioInicio().equals(horario.getHoraInicio())) {
+                            temConflito = true;
+                            break;
+                        }
+
+                        // Choque 2: A turma já tem alguma outra matéria alocada nessa exata hora?
+                        if (aulaGerada.getTurmaNome().equals(turma.getNome()) &&
+                                aulaGerada.getHorarioInicio().equals(horario.getHoraInicio())) {
+                            temConflito = true;
+                            break;
+                        }
+                    }
+
+                    // 7. Se não tem conflito nem de professor, nem de turma, cria a Aula e salva!
+                    if (!temConflito) {
                         Aula novaAula = new Aula(
                                 turma.getNome(),
                                 professorEncontrado.getNome(),
-                                materiaDesejada,
+                                materiaDesejada.getNome(),
                                 horario.getHoraInicio()
                         );
 
                         BancoEstadual.gradeGerada.add(novaAula);
                         aulaAlocada = true;
+
+                        // Aula marcada com sucesso. Para o loop de horários e vai pra próxima matéria.
                         break;
                     }
                 }
