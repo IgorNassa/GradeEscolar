@@ -1,10 +1,7 @@
 package br.escola.core;
 
 import br.escola.database.BancoEstadual;
-import br.escola.model.Aula;
-import br.escola.model.Horario;
-import br.escola.model.Professor;
-import br.escola.model.Turma;
+import br.escola.model.*;
 
 public class GeradorForcaBruta {
 
@@ -15,11 +12,11 @@ public class GeradorForcaBruta {
         BancoEstadual.gradeGerada.clear();
 
         for (Turma turma : BancoEstadual.turmas) {
-            for (String materiaDesejada : turma.getMateriasDaGrade()) {
+            for (Disciplina materiaDesejada : turma.getMateriasDaGrade()) {
 
                 Professor professorEncontrado = null;
                 for (Professor prof : BancoEstadual.professores) {
-                    if (prof.getDisciplinaLecionada().equalsIgnoreCase(materiaDesejada)) {
+                    if (prof.getDisciplinaLecionada() ==  materiaDesejada) {
                         professorEncontrado = prof;
                         break;
                     }
@@ -47,7 +44,7 @@ public class GeradorForcaBruta {
                         Aula novaAula = new Aula(
                                 turma.getNome(),
                                 professorEncontrado.getNome(),
-                                materiaDesejada,
+                                materiaDesejada.getNome(),
                                 horario.getHoraInicio()
                         );
 

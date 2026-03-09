@@ -1,13 +1,11 @@
 package br.escola.model;
-
-<<<<<<< HEAD
 import java.util.ArrayList;
 import java.util.List;
 
 public class Turma {
     private Long id;
     private String nome;
-    private List<String> materiasDaGrade = new ArrayList<>();
+    private List<Disciplina> materiasDaGrade = new ArrayList<>();
 
     public Turma(Long id, String nome) {
         this.id = id;
@@ -33,14 +31,11 @@ public class Turma {
         this.nome = nome;
     }
 
-    public List<String> getMateriasDaGrade() {
+    public List<Disciplina> getMateriasDaGrade() {
         return materiasDaGrade;
     }
 
-    public void setMateriasDaGrade(List<String> materiasDaGrade) {
+    public void setMateriasDaGrade(ArrayList<Disciplina> materiasDaGrade) {
         this.materiasDaGrade = materiasDaGrade;
     }
-=======
-public class Turma {
->>>>>>> 2f612ee53ab2917677874e99bb72333be69552eb
 }
